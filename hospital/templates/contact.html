@@ -1,0 +1,37 @@
+  {% include 'base.html' %}
+  {% include 'navigation.html' %}
+  <style>
+      .mydivstyle:hover {
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+          transform: translateY(-20px); /* Corrected 'translate y' to 'translateY' */
+      }
+  </style>
+  {% block content %}
+  <div class="container" style="margin-top: 50px;">
+      <h1 class="text-center">Contact Us</h1>
+      <div class="row mt-5 text-center">
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+          <h4><i class="fas fa-phone-square"></i> Contact</h4> <!-- Added closing </i> tag -->
+          <p class="text-danger font-weight-bold mt-3"><a href="tel:+255783331541">+255 783 331 541</a></p> <!-- Removed space in tel link -->
+          <p class="text-danger font-weight-bold mt-3"><a href="tel:+255689282402">+255 689 282 402</a></p> <!-- Removed space in tel link -->
+          <p class="text-danger font-weight-bold mt-3"><a href="tel:+255673601014">+255 673 601 014</a></p> <!-- Removed space in tel link -->
+        </div>
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+          <h4><i class="fa fa-envelope"></i> Send-email</h4>
+          <p class="font-weight-bold mt-3"><a href="mailto:abc@gmail.com">enockimani493@gmail.com</a></p>
+          <p class="font-weight-bold mt-3"><a href="mailto:abc@gmail.com">admin@gmail.com</a></p>
+        </div>
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+          <h4><i class="fa fa-map-marker"></i> Office Address</h4> <!-- Removed unnecessary 'aria-hidden' attribute -->
+          <p class="font-weight-bold mt-3"><a href="http://maps.google.com/maps?q=Upanga">Upanga, Dar es Salaam</a></p>
+        </div>
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+          <h4><i class="fa fa-clock"></i> Office Time</h4> <!-- Removed unnecessary 'aria-hidden' attribute -->
+          <p class="font-weight-bold mt-3">24 HRS Everyday</p>
+        </div>
+      </div>
+  </div>
+  {% endblock content %}
+  {% include 'footer.html' %}
+  
+  
