@@ -1,14 +1,17 @@
 {% include 'base.html' %}
 {% include 'navigation.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
 
-<h2>Service Form</h2>
-<form method="post">
+<h2 class="text-center">Service Form</h2>
+
+<form method="post" action="{% url 'patient_info' %}" class="container">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+    {% bootstrap_form form %}
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
 
 {% endblock content %}
 {% include 'footer.html' %}

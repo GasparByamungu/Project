@@ -22,3 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('hospital.urls')),
 ]
+
+admin.site.site_header = "ADMINISTRATOR_DASHBOARD"
+admin.site.site_title = "Dashboard"
+admin.site.index_title = "Admin"

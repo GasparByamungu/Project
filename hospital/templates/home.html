@@ -13,7 +13,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{% static 'Images/post.png' %}" class="d-block w-100" alt="...">
+            <img src="{% static 'Images/hospital.jpg' %}" class="d-block w-100" alt="...">
             <div class="carousel-caption text-white">
                 <div class="background-1">
                     <h2>Postoperative Care</h2>
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{% static 'Images/incubator.jpg' %}" class="d-block w-100" alt="...">
+            <img src="{% static 'Images/baby.jpg' %}" class="d-block w-100" alt="...">
             <div class="carousel-caption text-white">
                 <div class="background-1">
                     <h2>Neonatal intensive care unit</h2>
@@ -81,7 +81,7 @@
         </div>
         <div class="col-md-4" id="intro-text">
             <h1 class="text-center">
-                <h1 class="text-center">Welcome to hospital management system</h1>
+                <h1 class="text-center">Welcome to hospital appointment system</h1>
             </h1>
             <p class="text-justify">
             <h5>Thank you for choosing our hospital for your healthcare needs.
@@ -98,11 +98,16 @@
                     Appointments</a></button>
                 <br>
                 <br>
-                <button class="btn bbtn-lg btn-block"><a href="#about" class="nav-link"><i
+                <button class="btn btn-lg btn-block"><a href="{% url 'view_appointment' %}" class="nav-link"><i
+                    class=""></i>&nbsp;&nbsp;&nbsp;&nbsp;View
+                    Appointments</a></button>
+                <br>
+                <br>
+                <button class="btn bbtn-lg btn-block"><a href="http://maps.google.com/maps?q=Aly Khan Rd, Dar es Salaam 2029" class="nav-link"><i
                     class="fa fa-map-marker"></i>&nbsp;&nbsp;&nbsp;&nbsp;Location</a></button>
                 <br>
                 <br>
-                <button class="btn bbtn-lg btn-block"><a href="#about" class="nav-link"><i
+                <button class="btn bbtn-lg btn-block"><a href="{% url 'contact' %}" class="nav-link"><i
                     class="fas fa-phone-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;Emergency 
                     Contact</a></button>
                 <br>    

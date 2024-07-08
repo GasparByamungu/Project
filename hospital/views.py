@@ -19,6 +19,12 @@ def Home(request):
 def Contact(request):
     return render(request, 'contact.html')
 
+def view_appointment(request):
+    if request.method == 'GET':
+        appointment = Appointment.objects.all()
+
+    return render(request, 'view_appointment.html', {'doc':appointment})
+
 
 def Index(request):
     if not request.user.is_staff:
@@ -179,3 +185,13 @@ def service_form_view(request):
     else:
         form = ServiceForm()
     return render(request, 'service_form.html', {'form': form})
+
+
+def patient_info(request):
+    if request.method == 'POST':
+        form = ServiceForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        return "Error failed to send data"

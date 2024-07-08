@@ -1,3 +1,4 @@
+
 from django.db import models
 
 # Create your models here.
@@ -19,7 +20,7 @@ class Patient(models.Model):
     address = models.TextField()
 
     def __str__(self):
-        return self.Name
+        return self.name
     
 
 class Appointment(models.Model):
@@ -30,4 +31,24 @@ class Appointment(models.Model):
 
     def __str__(self):
         return self.Doctor.Name + "__"+self.Patient.name
+
+
+class Service(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return self.name
     
+
+class OtherService(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return self.name
+    
+
+class PatientInfo(models.Model):
+    name = models.CharField(max_length=150)
+    contact = models.CharField(max_length=100)
+    medical_service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    other_service = models.ForeignKey(OtherService, on_delete=models.CASCADE)
