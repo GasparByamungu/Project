@@ -46,9 +46,11 @@ class OtherService(models.Model):
     def __str__(self) -> str:
         return self.name
     
-
+    
 class PatientInfo(models.Model):
     name = models.CharField(max_length=150)
     contact = models.CharField(max_length=100)
+    gender = models.CharField(max_length=6)
+    adress = models.CharField(max_length=100)
     medical_service = models.ForeignKey(Service, on_delete=models.CASCADE)
     other_service = models.ForeignKey(OtherService, on_delete=models.CASCADE)
