@@ -48,9 +48,13 @@ class OtherService(models.Model):
     
     
 class PatientInfo(models.Model):
+    GENDER = (
+        ('male', 'Male'),
+        ('Female', 'Female'),
+    )
     name = models.CharField(max_length=150)
     contact = models.CharField(max_length=100)
-    gender = models.CharField(max_length=6)
+    gender = models.CharField(max_length=6, choices=GENDER)
     adress = models.CharField(max_length=100)
     medical_service = models.ForeignKey(Service, on_delete=models.CASCADE)
     other_service = models.ForeignKey(OtherService, on_delete=models.CASCADE)
